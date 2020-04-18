@@ -27,7 +27,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void startLesson (View view) {
-        Intent intent = new Intent(this, ShowLesson.class);
+        Intent intent = new Intent(this, JavaActivity.class);
         startActivity(intent);
     }
 
