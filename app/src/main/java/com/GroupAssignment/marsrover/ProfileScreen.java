@@ -37,6 +37,7 @@ public class ProfileScreen extends AppCompatActivity {
         medal7 = (ImageView) findViewById(R.id.medal7);
         medal8 = (ImageView) findViewById(R.id.medal8);
         medal9 = (ImageView) findViewById(R.id.medal9);
+        // will find different ImageView afterwards 
     }
     //if finish one lesson --> imageView become visible
 
