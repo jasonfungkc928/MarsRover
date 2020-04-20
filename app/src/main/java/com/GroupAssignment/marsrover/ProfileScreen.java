@@ -40,6 +40,7 @@ public class ProfileScreen extends AppCompatActivity {
         // will find different ImageView afterwards
 
         name.setText("Student");
+
         //int totalScore = sum of the score of every game
         //score.setText("Total score:" + Integer.ValueOf(totalScore)
 
