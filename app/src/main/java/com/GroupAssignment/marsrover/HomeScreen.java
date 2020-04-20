@@ -30,7 +30,7 @@ public class HomeScreen extends AppCompatActivity {
         Intent intent = new Intent(this, JavaActivity.class);
         startActivity(intent);
     }
-
+    //navigate to the game page
     public void startGame (View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -40,7 +40,7 @@ public class HomeScreen extends AppCompatActivity {
         Intent intent = new Intent(this, ProfileScreen.class);
         startActivity(intent);
     }
-
+    //navigate to QandA page
     public void startQandA (View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
