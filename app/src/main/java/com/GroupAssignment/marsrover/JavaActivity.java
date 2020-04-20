@@ -5,29 +5,27 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 
 public class JavaActivity extends AppCompatActivity {
     private static final String TAG = "JavaActivity";
     ArrayList<String> lessons = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.java_lesson);
-        lessons.add("Print Statement");
+        lessons = lessonsList();
+
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         JavaAdapter.JavaListener listener = new JavaAdapter.JavaListener() {
             @Override
             public void onClick(View view, int position) {
-
+                clickResponse(position);
             }
         };
 
@@ -37,9 +35,19 @@ public class JavaActivity extends AppCompatActivity {
     }
 
     public void clickResponse(int position) {
-        Log.d(TAG, "clickResponse: called");
+        Log.d(TAG, "clickResponse: called" + position);
         Intent intent = new Intent(JavaActivity.this, ShowLesson.class);
-        intent.putExtra( "lesson", lessons.get(position));
+        intent.putExtra("lesson", lessons.get(position));
         JavaActivity.this.startActivity(intent);
+    }
+
+    public ArrayList<String> lessonsList() {
+        ArrayList<String> lessons = new ArrayList<>();
+        lessons.add("Print Statement");
+        lessons.add("If statement");
+        lessons.add("While Loops");
+        lessons.add("For Loops");
+        lessons.add("OOP");
+        return lessons;
     }
 }

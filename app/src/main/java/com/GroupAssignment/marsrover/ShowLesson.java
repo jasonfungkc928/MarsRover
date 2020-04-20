@@ -12,10 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ShowLesson extends AppCompatActivity {
     String lesson;
-    Button classBut;
-    Button output;
-    ImageView imageView;
-    TableLayout result;
+    Button classBut, classBut1;
+    Button output,output1;
+    ImageView imageView, imageView1;
+    TableLayout result, result1;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,13 +25,29 @@ public class ShowLesson extends AppCompatActivity {
         lesson = (String) extras.get("lesson");
         if (lesson.equals("Print Statement")) {
             setContentView(R.layout.print);
-            imageView = findViewById(R.id.imageView);
-            result = findViewById(R.id.output);
-            classBut = findViewById(R.id.printBut);
-            output = findViewById(R.id.printOutBut);
-            classBut.setOnClickListener(classClicked);
-            output.setOnClickListener(outputClicked);
+        } else if (lesson.equals("While Loops")) {
+            setContentView(R.layout.while_loop);
+        } else if (lesson.equals("For Loops")){
+            setContentView(R.layout.for_loop);
+        } else if (lesson.equals("OOP")) {
+            setContentView(R.layout.oop);
+        } else {
+            if (lesson.equals("If statement")) {
+                setContentView(R.layout.if_stm);
+            }
+            imageView1 = findViewById(R.id.imageView1);
+            classBut1 = findViewById(R.id.className1);
+            output1 = findViewById(R.id.output1);
+            result1 = findViewById(R.id.outputScreen1);
+            classBut1.setOnClickListener(classClicked1);
+            output1.setOnClickListener(outputClicked1);
         }
+        imageView = findViewById(R.id.imageView);
+        result = findViewById(R.id.outputScreen);
+        classBut = findViewById(R.id.className);
+        output = findViewById(R.id.output);
+        classBut.setOnClickListener(classClicked);
+        output.setOnClickListener(outputClicked);
     }
 
     private View.OnClickListener classClicked = new View.OnClickListener() {
@@ -47,6 +63,21 @@ public class ShowLesson extends AppCompatActivity {
         public void onClick(View v) {
             result.setVisibility(View.VISIBLE);
             imageView.setVisibility(View.INVISIBLE);
+        }
+    };
+    private View.OnClickListener classClicked1 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            result1.setVisibility(View.INVISIBLE);
+            imageView1.setVisibility(View.VISIBLE);
+        }
+    };
+
+    private View.OnClickListener outputClicked1 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            result1.setVisibility(View.VISIBLE);
+            imageView1.setVisibility(View.INVISIBLE);
         }
     };
 }
