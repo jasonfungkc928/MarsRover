@@ -38,12 +38,13 @@ public class ProfileScreen extends AppCompatActivity {
         medal8 = (ImageView) findViewById(R.id.medal8);
         medal9 = (ImageView) findViewById(R.id.medal9);
         // will find different ImageView afterwards
+
+        name.setText("Student");
+        //int totalScore = sum of the score of every game
+        //score.setText("Total score:" + Integer.ValueOf(totalScore)
+
+        //if finish one lesson and game score > 75marks --> imageView become visible
+        //medal1.setVisibility(View.VISIBLE)
     }
-    //if finish one lesson and game score > 75marks --> imageView become visible
-    //medal1.setVisibility(View.VISIBLE)
-
-    //int totalScore = sum of the score of every game
-    //score.setText("Total score:" + Integer.ValueOf(totalScore)
-
 
 }
