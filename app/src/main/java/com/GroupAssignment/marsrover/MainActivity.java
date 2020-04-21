@@ -15,9 +15,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView textScreen, textQuestion, textTitle;
-
-    ArrayList<Question> questions = Question.generateQuestions();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
