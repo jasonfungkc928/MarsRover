@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.GroupAssignment.marsrover.Controller.MainActivity;
+
 public class HomeScreen extends AppCompatActivity {
 
     private Button lesson, game, profile, QandA;

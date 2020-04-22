@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ProfileScreen"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Controller.MainActivity"></activity>
         <activity android:name=".HomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

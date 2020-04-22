@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">Mars Rover</string>
+    <string name="stage0">Stage Zero</string>
+    <string name="stage1">Stage One</string>
+    <string name="stage2">Stage Two</string>
+    <string name="stage3">Stage Three</string>
+
+    <string-array name="stage0">
+        <question>question1</question>
+    </string-array>
+
+    <string-array name="stage1">
+        <question>question1</question>
+        <question>question2</question>
+    </string-array>
+
+    <string-array name="stage2">
+        <question>question1</question>
+        <question>question2</question>
+    </string-array>
+
+    <string-array name="stage3">
+        <question>question1</question>
+        <question>question2</question>
+    </string-array>
+
 </resources>
