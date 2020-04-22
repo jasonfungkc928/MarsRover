@@ -5,4 +5,7 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="colorPurple">#332FA2</color>
     <color name="white">#FFFFFF</color>
+    <color name="offWhite">#f0e7e7</color>
+    <color name="darkOrange">#451804</color>
+    <color name="marsOrange">#E77D11</color>
 </resources>

@@ -18,7 +18,7 @@ public class HomeScreen extends AppCompatActivity {
     private Button lesson, game, profile, QandA;
     private ImageView imageView1;
 
-
+    static int userScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,9 @@ public class HomeScreen extends AppCompatActivity {
         // will find another imageView later
 
         /**create or load userScore**/
-        int userScore = getUserScore();
+
+        setUserScore(1);
+        userScore = getUserScore();
 
         /**showing the user's Score**/
         TextView score = findViewById(R.id.tvScore);
@@ -41,19 +43,6 @@ public class HomeScreen extends AppCompatActivity {
 
     }
 
-    public int getUserScore(){
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-
-        return sharedPref.getInt("user_score", 0);
-    }
-    public void setUserScore(int newScore){
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-
-        editor.putInt("user_score", newScore);
-        editor.commit();
-    }
 
     public void startLesson (View view) {
         Intent intent = new Intent(this, JavaActivity.class);
@@ -75,4 +64,20 @@ public class HomeScreen extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    /**METHODS TO GET AND SET THE USERSCORE FROM PERMANENT STORAGE**/
+
+    public int getUserScore(){
+
+        SharedPreferences sharedPref = this.getSharedPreferences("USER_DATA", Context.MODE_PRIVATE);
+        return sharedPref.getInt("user_score", 0);
+    }
+
+    public void setUserScore(int newScore){
+        SharedPreferences sharedPref = this.getSharedPreferences("USER_DATA", Context.MODE_PRIVATE);
+        userScore = newScore;
+        sharedPref.edit().putInt("user_score", newScore).commit();
+    }
+
+    /**************************************************************/
 }
