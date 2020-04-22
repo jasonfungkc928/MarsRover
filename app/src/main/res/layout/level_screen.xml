@@ -7,6 +7,8 @@
     android:background="@color/darkOrange">
 
     <TextView
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/list_parent"

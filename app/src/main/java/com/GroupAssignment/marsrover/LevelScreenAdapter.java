@@ -2,6 +2,7 @@ package com.GroupAssignment.marsrover;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,13 @@ import java.util.HashMap;
 import java.util.List;
 
 public class LevelScreenAdapter extends BaseExpandableListAdapter {
+
+    /**TO DO:
+     * - Make child objects launch question activities
+     * - Calculate when a child object should be openable
+     * - Make locked child objects un-openable
+     * - Design 9 questions for 3 topics based on lessons
+     * - */
 
     Context context;
     List<String> listStage;
@@ -80,18 +88,21 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
         int stage = Integer.parseInt(group.replaceAll("[^\\d.]", ""));
         int requiredScore = stage*3;
 
-        if(userScore < requiredScore){
+        //textView.setText(String.valueOf(userScore));
+        if(userScore+1 >= requiredScore){
             //add imageview, display locked lock or greyed out star
-            textView.setText(group);
-            textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        }else {
-            textView.setText(group);
+            textView.setText(group+" Unlocked");
+        }else if (requiredScore > userScore+1){
+
+            textView.setText(group+" locked");
+            //textView.setTextColor(context.getResources().getColor(R.color.darkOrange));
         }
         return convertView;
     }
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
+        String group = (String) getGroup(groupPosition);
         String child = (String) getChild(groupPosition, childPosition);
         if(convertView == null){
             LayoutInflater layoutInflater = (LayoutInflater) this.context
@@ -99,7 +110,21 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
             convertView = layoutInflater.inflate(R.layout.stage_row, null);
         }
         TextView textView = convertView.findViewById(R.id.level);
-            textView.setText(child);
+
+        /**This code requires that the only integers in the parent names are 0,1,2,3 resepctively*/
+        int stage = Integer.parseInt(group.replaceAll("[^\\d.]", ""));
+        int question = Integer.parseInt(child.replaceAll("[^\\d.]", ""));
+        int requiredScore = (stage*3)+question;
+
+
+        if(userScore+1 >= requiredScore){
+            textView.setText(child+" unlocked");
+        }else if (requiredScore > userScore+1) {
+            //add imageview, display locked lock or greyed out star
+            textView.setText(child+" locked");
+            textView.setClickable(false);
+        }
+
 
         return convertView;
     }
