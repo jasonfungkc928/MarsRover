@@ -53,69 +53,84 @@
         android:id="@+id/medal2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="18dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/lesson2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/medal1"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        tools:layout_editor_absoluteY="285dp" />
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <ImageView
         android:id="@+id/medal1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginBottom="18dp"
         android:visibility="invisible"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="286dp" />
+        app:layout_constraintBottom_toTopOf="@+id/lesson1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <ImageView
         android:id="@+id/medal3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginBottom="8dp"
         android:visibility="invisible"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="418dp" />
+        app:layout_constraintBottom_toTopOf="@+id/lesson3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <TextView
         android:id="@+id/lesson1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginBottom="64dp"
         android:text="Stage0"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="335dp" />
+        app:layout_constraintBottom_toTopOf="@+id/medal3"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/lesson2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="64dp"
         android:text="Stage1"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="335dp" />
+        app:layout_constraintBottom_toTopOf="@+id/medal4"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/lesson3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="95dp"
+        android:layout_marginBottom="182dp"
         android:text="Stage2"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="458dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/medal4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="126dp"
+        android:layout_marginBottom="8dp"
         android:visibility="invisible"
-        app:srcCompat="@android:drawable/btn_star_big_on"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="418dp" />
+        app:layout_constraintBottom_toTopOf="@+id/lesson4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <TextView
         android:id="@+id/lesson4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="114dp"
+        android:layout_marginBottom="182dp"
         android:text="Stage3"
-        tools:layout_editor_absoluteX="253dp"
-        tools:layout_editor_absoluteY="458dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
