@@ -35,7 +35,7 @@ public class ProfileScreen extends AppCompatActivity {
         name.setText("Student");
         //int totalScore = sum of the score of every game
         //score.setText("Total score:" + Integer.ValueOf(totalScore)
-        
+
         if (userScore>=3)
             medal1.setVisibility(View.VISIBLE);
         if (userScore>=6)
