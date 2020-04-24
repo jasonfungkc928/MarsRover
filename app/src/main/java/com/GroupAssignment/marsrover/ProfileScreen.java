@@ -33,17 +33,12 @@ public class ProfileScreen extends AppCompatActivity {
 
 
         name.setText("Student");
-        score.setText(userScore);
+        //int totalScore = sum of the score of every game
+        //score.setText("Total score:" + Integer.ValueOf(totalScore)
 
-        if (userScore >= 3)
-                medal1.setVisibility(View.VISIBLE);
-        if (userScore >= 6)
-            medal2.setVisibility(View.VISIBLE);
-        if (userScore >= 9)
-            medal3.setVisibility(View.VISIBLE);
-        if (userScore >= 12)
-            medal4.setVisibility(View.VISIBLE);
 
+        //if finish one lesson and game score > 75marks --> imageView become visible
+        //medal1.setVisibility(View.VISIBLE)
     }
 
 }
