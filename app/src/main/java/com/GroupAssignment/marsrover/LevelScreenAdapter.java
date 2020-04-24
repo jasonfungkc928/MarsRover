@@ -1,6 +1,7 @@
 package com.GroupAssignment.marsrover;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+
+import com.GroupAssignment.marsrover.Controller.QuestionActivity;
 
 import org.w3c.dom.Text;
 
@@ -19,15 +22,27 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
 
     /**TO DO:
      * - Make child objects launch question activities
-     * - Calculate when a child object should be openable
      * - Make locked child objects un-openable
-     * - Design 9 questions for 3 topics based on lessons
      * - */
 
     Context context;
     List<String> listStage;
     HashMap<String, List<String>> listQuestion;
     int userScore;
+    //boolean inwide
+    //call generate questions method, get list of 12 questions.
+    private View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String qTitle = (String) v.getTag();
+            System.out.println(qTitle);
+            //make intent, put question name in it
+            //launch question activity with intent
+            Context context = v.getContext();
+            Intent intent = new Intent(context, QuestionActivity.class);
+            intent.putExtra()
+        }
+    };
 
 
 
@@ -117,20 +132,36 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
         int requiredScore = (stage*3)+question;
 
 
-        if(userScore+1 >= requiredScore){
+        if(userScore+1 == requiredScore){
             textView.setText(child+" unlocked");
+            convertView.setTag(child);
+            convertView.setOnClickListener(mOnClickListener);
         }else if (requiredScore > userScore+1) {
             //add imageview, display locked lock or greyed out star
             textView.setText(child+" locked");
             textView.setClickable(false);
+        }else{
+            textView.setText(child+" completed");
+            convertView.setTag(child);
+            convertView.setOnClickListener(mOnClickListener);
         }
-
 
         return convertView;
     }
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return true;
+        String group = (String) getGroup(groupPosition);
+        String child = (String) getChild(groupPosition, childPosition);
+
+        int stage = Integer.parseInt(group.replaceAll("[^\\d.]", ""));
+        int question = Integer.parseInt(child.replaceAll("[^\\d.]", ""));
+        int requiredScore = (stage*3)+question;
+
+        if (requiredScore > userScore+1) {
+            return false;
+        }else{
+            return true;
+        }
     }
 }

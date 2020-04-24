@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     List<String> listStage;
     HashMap<String, List<String>> listQuestion;
     LevelScreenAdapter adapter;
+    TextView tvScore;
 
     public int getUserScore(){
         SharedPreferences sharedPref = this.getSharedPreferences("USER_DATA", Context.MODE_PRIVATE);
@@ -44,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //insert boolean to check if in widescreen
-
+        tvScore = findViewById(R.id.levelTitle);
+        tvScore.setText("Score: "+getUserScore());
         expandableListView = findViewById(R.id.stage_list_view);
         listStage = new ArrayList<>();
         listQuestion = new HashMap<>();
