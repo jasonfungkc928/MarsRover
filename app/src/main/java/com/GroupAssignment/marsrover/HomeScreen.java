@@ -30,7 +30,6 @@ public class HomeScreen extends AppCompatActivity {
         profile = (Button) findViewById(R.id.profile);
         QandA = (Button) findViewById(R.id.QandA);
         imageView1 = (ImageView) findViewById(R.id.imageView1);
-        // will find another imageView later
 
         /**create or load userScore**/
 
