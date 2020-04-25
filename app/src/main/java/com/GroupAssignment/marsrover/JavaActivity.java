@@ -44,6 +44,8 @@ public class JavaActivity extends AppCompatActivity {
     public ArrayList<String> lessonsList() {
         ArrayList<String> lessons = new ArrayList<>();
         lessons.add("Print Statement");
+        lessons.add("Arithmetic Operators");
+        lessons.add("Comparison Operators");
         lessons.add("If statement");
         lessons.add("While Loops");
         lessons.add("For Loops");

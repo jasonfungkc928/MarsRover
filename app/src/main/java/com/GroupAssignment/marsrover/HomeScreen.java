@@ -67,7 +67,6 @@ public class HomeScreen extends AppCompatActivity {
     /**METHODS TO GET AND SET THE USERSCORE FROM PERMANENT STORAGE**/
 
     public int getUserScore(){
-
         SharedPreferences sharedPref = this.getSharedPreferences("USER_DATA", Context.MODE_PRIVATE);
         return sharedPref.getInt("user_score", 0);
     }
