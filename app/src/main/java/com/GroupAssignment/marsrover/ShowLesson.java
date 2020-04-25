@@ -34,7 +34,7 @@ public class ShowLesson extends AppCompatActivity {
         } else if (lesson.equals("Arithmetic Operators")){
             setContentView(R.layout.arithmetic);
         } else if (lesson.equals("Comparison Operators")) {
-            //setContentView(R.layout.comparison);
+            setContentView(R.layout.comparison);
         }
         else {
             if (lesson.equals("If statement")) {
