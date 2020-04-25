@@ -91,7 +91,7 @@ public class Question {
 
         String[] answers11 = new String[3];
         answers11[0] = "a) Trick question! The program won't actually run"; answers11[1] = "b) Method overloading, the program knows which one to run based on the order they’re called"; answers11[2] = "c) Method overloading, the program knows which one to run based on input parameters";
-        qListToReturn.add(new Question("2. Method overloading"," ",answers11[2], answers11, R.drawable.question11));
+        qListToReturn.add(new Question("2. Method overloading","These 2 sum methods have the same name, yet the program still runs, why?",answers11[2], answers11, R.drawable.question11));
 
         String[] answers12 = new String[3];
         answers12[0] = "a) Static class can only be accessed by a getter or setter"; answers12[1] = "b) Class variables in OO programming  are Private or Protected, so getters and setters are the only way to access those class variables"; answers12[2] = "c) Class variables can NOT be edited unless getters and setters have been created";

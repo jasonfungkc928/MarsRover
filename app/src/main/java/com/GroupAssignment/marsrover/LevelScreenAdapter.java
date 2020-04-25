@@ -106,10 +106,10 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
         int requiredScore = stage*3;
 
 
-        if(userScore+1 >= requiredScore){
+        if(userScore >= requiredScore){
             //add imageview, display locked lock or greyed out star
             textView.setText(group+" Unlocked");
-        }else if (requiredScore > userScore+1){
+        }else if (requiredScore > userScore){
 
             textView.setText(group+" locked");
             //textView.setTextColor(context.getResources().getColor(R.color.darkOrange));
@@ -147,7 +147,6 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
             textView.setText(child);
             status.setImageResource(R.drawable.locked);
             convertView.setTag(child);
-            //convertView.setOnClickListener(mOnClickListener);
             textView.setClickable(false);
         }else{
             status.setImageResource(R.drawable.completed);

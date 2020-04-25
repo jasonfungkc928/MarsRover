@@ -137,7 +137,12 @@ public class QuestionFragment extends Fragment {
         AlertDialog.Builder resultPopup = new AlertDialog.Builder(this.getActivity());
         if(result){
             alertTitle = "CORRECT";
-            alertMessage = "Nice job, you can now move on to the next question";
+            if(userScore ==11){
+                alertMessage = "Nice job, Now that you have a firm grasp on these concepts, try writing up a java program yourself!";
+            }else{
+                alertMessage = "Nice job, you can now move on to the next question";
+            }
+
             if(updateScore){
                 setUserScore(userScore+1);
             }

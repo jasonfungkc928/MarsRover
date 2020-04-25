@@ -32,7 +32,7 @@ public class HomeScreen extends AppCompatActivity {
         imageView1 = (ImageView) findViewById(R.id.imageView1);
 
         /**create or load userScore**/
-        
+
         userScore = getUserScore();
 
     }
