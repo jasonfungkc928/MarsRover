@@ -1,6 +1,9 @@
 package com.GroupAssignment.marsrover.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.GroupAssignment.marsrover.R;
@@ -11,6 +14,7 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
 
         if(savedInstanceState == null){
             Bundle arguments = new Bundle();

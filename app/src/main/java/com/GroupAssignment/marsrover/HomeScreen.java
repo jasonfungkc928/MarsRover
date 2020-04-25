@@ -32,13 +32,8 @@ public class HomeScreen extends AppCompatActivity {
         imageView1 = (ImageView) findViewById(R.id.imageView1);
 
         /**create or load userScore**/
-
-        setUserScore(1);
+        
         userScore = getUserScore();
-
-        /**showing the user's Score**/
-        TextView score = findViewById(R.id.tvScore);
-        score.setText("Score: "+userScore);
 
     }
 
@@ -76,6 +71,7 @@ public class HomeScreen extends AppCompatActivity {
         userScore = newScore;
         sharedPref.edit().putInt("user_score", newScore).commit();
     }
+
 
     /**************************************************************/
 }

@@ -9,8 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.GroupAssignment.marsrover.Controller.MainActivity;
 import com.GroupAssignment.marsrover.Controller.QuestionActivity;
 import com.GroupAssignment.marsrover.Controller.QuestionFragment;
 
@@ -21,17 +23,14 @@ import java.util.List;
 
 public class LevelScreenAdapter extends BaseExpandableListAdapter {
 
-    /**TO DO:
-     * - Make child objects launch question activities
-     * - Make locked child objects un-openable
-     * - */
-
     Context context;
     List<String> listStage;
     HashMap<String, List<String>> listQuestion;
-    int userScore;
+    static int userScore;
+
     //boolean inwide
     //call generate questions method, get list of 12 questions.
+
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -47,6 +46,7 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
     };
 
 
+    public LevelScreenAdapter(){}
 
     public LevelScreenAdapter(Context context, List<String> listStage, HashMap<String,List<String>> listQuestion, int userScore) {
         this.context = context;
@@ -105,7 +105,7 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
         int stage = Integer.parseInt(group.replaceAll("[^\\d.]", ""));
         int requiredScore = stage*3;
 
-        //textView.setText(String.valueOf(userScore));
+
         if(userScore+1 >= requiredScore){
             //add imageview, display locked lock or greyed out star
             textView.setText(group+" Unlocked");
@@ -127,6 +127,8 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
             convertView = layoutInflater.inflate(R.layout.stage_row, null);
         }
         TextView textView = convertView.findViewById(R.id.level);
+        ImageView status = convertView.findViewById(R.id.status);
+
 
         String s = group.replaceAll("[^0-9]", "");
         String q = child.replaceAll("[^0-9]", "");
@@ -135,17 +137,20 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
         int question = Integer.parseInt(q.replaceAll("[.]", ""));
         int requiredScore = (stage*3)+question;
 
-
+        textView.setText(child);
         if(userScore+1 == requiredScore){
-            textView.setText(child+" unlocked");
+            status.setImageResource(R.drawable.unlocked);
             convertView.setTag(child);
             convertView.setOnClickListener(mOnClickListener);
         }else if (requiredScore > userScore+1) {
             //add imageview, display locked lock or greyed out star
-            textView.setText(child+" locked");
+            textView.setText(child);
+            status.setImageResource(R.drawable.locked);
+            convertView.setTag(child);
+            //convertView.setOnClickListener(mOnClickListener);
             textView.setClickable(false);
         }else{
-            textView.setText(child+" completed");
+            status.setImageResource(R.drawable.completed);
             convertView.setTag(child);
             convertView.setOnClickListener(mOnClickListener);
         }
@@ -166,9 +171,17 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
         int requiredScore = (stage*3)+question;
 
         if (requiredScore > userScore+1) {
-            return false;
+            //return false;
+            return true;
         }else{
             return true;
         }
+    }
+
+    public void setUserScore(int newScore){
+        userScore = newScore;
+        MainActivity m = new MainActivity();
+        m.setTvScore();
+        notifyDataSetChanged();
     }
 }

@@ -94,5 +94,12 @@ public class MainActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
+    public void setTvScore(){
+        if(tvScore != null){
+            tvScore = findViewById(R.id.levelTitle);
+            tvScore.setText("Score: "+getUserScore());
+        }
+
+    }
 
 }

@@ -1,5 +1,10 @@
 package com.GroupAssignment.marsrover.Controller;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -12,10 +17,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.GroupAssignment.marsrover.HomeScreen;
+import com.GroupAssignment.marsrover.LevelScreenAdapter;
 import com.GroupAssignment.marsrover.Model.Question;
 import com.GroupAssignment.marsrover.R;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
 
 
 /**
@@ -27,6 +35,12 @@ public class QuestionFragment extends Fragment {
     public static final String ARG_QUESTION_NAME = "questionName";
     private Question mQuestion;
     private static ArrayList<Question> mQuestions = new ArrayList();
+    String selectedAnswer;
+
+    int userScore;
+    LevelScreenAdapter l = new LevelScreenAdapter();
+
+    boolean updateScore = false;
 
     public QuestionFragment() {
         // Required empty public constructor
@@ -55,7 +69,7 @@ public class QuestionFragment extends Fragment {
                     mQuestion = question;
                 }
             }
-            this.getActivity().setTitle(mQuestion.getqTitle());
+            //this.getActivity().setTitle(mQuestion.getqTitle());
         }
     }
 
@@ -66,6 +80,17 @@ public class QuestionFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_question, container, false);
 
         if(mQuestion != null){
+
+            userScore = getUserScore();
+
+            for(int i = 0; i < mQuestions.size(); i++){
+                if(mQuestions.get(i).getqTitle().equalsIgnoreCase(mQuestion.getqTitle())){
+                    if(userScore == i){
+                        updateScore = true;
+                    }
+                    break;
+                }
+            }
         //set all the views in the question fragment
             String ansA = mQuestion.getAnswers()[0];
             String ansB = mQuestion.getAnswers()[1];
@@ -76,8 +101,89 @@ public class QuestionFragment extends Fragment {
             ((Button) rootView.findViewById(R.id.ansB)).setText(ansB);
             ((Button) rootView.findViewById(R.id.ansC)).setText(ansC);
             ((ImageView)rootView.findViewById(R.id.questionImage)).setImageResource(mQuestion.getImgResource());
+
+            //setting on click listeners for buttons a,b,c
+            rootView.findViewById(R.id.ansA).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectedAnswer =  String.valueOf(((Button) v.findViewById(R.id.ansA)).getText());
+                    boolean result = isAnswerCorrect(mQuestion, selectedAnswer);
+                    showPopUp(result);
+                }
+            });
+            rootView.findViewById(R.id.ansB).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectedAnswer =  String.valueOf(((Button) v.findViewById(R.id.ansB)).getText());
+                    boolean result = isAnswerCorrect(mQuestion, selectedAnswer);
+                    showPopUp(result);
+                }
+            });
+            rootView.findViewById(R.id.ansC).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectedAnswer =  String.valueOf(((Button) v.findViewById(R.id.ansC)).getText());
+                    boolean result = isAnswerCorrect(mQuestion, selectedAnswer);
+                    showPopUp(result);
+                }
+            });
         }
 
         return rootView;
+    }
+
+    private void showPopUp(boolean result) {
+        String alertTitle,alertMessage;
+        AlertDialog.Builder resultPopup = new AlertDialog.Builder(this.getActivity());
+        if(result){
+            alertTitle = "CORRECT";
+            alertMessage = "Nice job, you can now move on to the next question";
+            if(updateScore){
+                setUserScore(userScore+1);
+            }
+        }else{
+            alertTitle = "INCORRECT!";
+            alertMessage = ":( Not to worry! head back to the lessons and try again";
+        }
+        resultPopup.setTitle(alertTitle);
+        resultPopup.setMessage(alertMessage);
+        resultPopup.setNeutralButton("Back To Level Select", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Context context = getActivity();
+                Intent intent = new Intent(context, MainActivity.class);
+                //intent.putExtra(QuestionFragment.ARG_QUESTION_NAME, qTitle);
+
+                context.startActivity(intent);
+            }
+        });
+
+//        LayoutInflater inflater = this.getLayoutInflater();
+//        View v = inflater.inflate(R.layout.question_result_popup, null);
+//        resultPopup.setView(v);
+        resultPopup.show();
+
+    }
+
+    public boolean isAnswerCorrect(Question question, String answer){
+        boolean result = false;
+        if(answer.equalsIgnoreCase(question.getCorrectAnswer())){
+            result = true;
+        }
+
+        return result;
+    }
+
+    public int getUserScore(){
+        SharedPreferences sharedPref = this.getActivity().getSharedPreferences("USER_DATA", Context.MODE_PRIVATE);
+        return sharedPref.getInt("user_score", 0);
+    }
+
+    public void setUserScore(int newScore){
+        SharedPreferences sharedPref = this.getActivity().getSharedPreferences("USER_DATA", Context.MODE_PRIVATE);
+        userScore = newScore;
+        l.setUserScore(newScore);
+        sharedPref.edit().putInt("user_score", newScore).commit();
+        //notify();
     }
 }

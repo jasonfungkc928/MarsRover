@@ -59,7 +59,7 @@ public class Question {
 
         String[] answers3 = new String[3];
         answers3[0] = "a) a = 4; b = 3"; answers3[1] = "b) a = 7; b = 7"; answers3[2] = "c) a = “four”;  b = “three”";
-        qListToReturn.add(new Question("3. String Concatenation","What do the variables a & b need to be for the output to be “4 + 3 = 7”?",answers3[0], answers3, R.drawable.question3));
+        qListToReturn.add(new Question("3. Concatenation","What do the variables a & b need to be for the output to be “4 + 3 = 7”?",answers3[0], answers3, R.drawable.question3));
 
         String[] answers4 = new String[3];
         answers4[0] = "a) a = 53; b = 82"; answers4[1] = "b) a = 7; b = 5"; answers4[2] = "c) a = 3; b = 3";
