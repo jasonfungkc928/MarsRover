@@ -12,6 +12,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 import com.GroupAssignment.marsrover.Controller.QuestionActivity;
+import com.GroupAssignment.marsrover.Controller.QuestionFragment;
 
 import org.w3c.dom.Text;
 
@@ -40,7 +41,8 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
             //launch question activity with intent
             Context context = v.getContext();
             Intent intent = new Intent(context, QuestionActivity.class);
-            //intent.putExtra()
+            intent.putExtra(QuestionFragment.ARG_QUESTION_NAME, qTitle);
+            context.startActivity(intent);
         }
     };
 

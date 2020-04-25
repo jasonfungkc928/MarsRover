@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".JavaActivity"></activity>
         <activity android:name=".ShowLesson"></activity>
+        <activity android:name=".Controller.QuestionActivity"/>
     </application>
 
 </manifest>

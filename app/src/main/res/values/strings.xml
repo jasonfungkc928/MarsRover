@@ -6,27 +6,27 @@
     <string name="stage3">Stage 3</string>
 
     <string-array name="stage0">
-        <item>Q.1: The Print Statement</item>
-        <item>question2</item>
-        <item>question3</item>
+        <item>1. The Print statement</item>
+        <item>2. Assigning values to variables</item>
+        <item>3. Concatenation</item>
     </string-array>
 
     <string-array name="stage1">
-        <item>question1</item>
-        <item>question2</item>
-        <item>question3</item>
+        <item>1. The if statement</item>
+        <item>2. The else statement</item>
+        <item>3. Operators</item>
     </string-array>
 
     <string-array name="stage2">
-        <item>question1</item>
-        <item>question2</item>
-        <item>question3</item>
+        <item>1. The while loop</item>
+        <item>2. The while mistake</item>
+        <item>3. The for loop</item>
     </string-array>
 
     <string-array name="stage3">
-        <item>question1</item>
-        <item>question2</item>
-        <item>question3</item>
+        <item>1. The sum method</item>
+        <item>2. Method overloading</item>
+        <item>3. Getters and Setters</item>
     </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
