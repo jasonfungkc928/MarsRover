@@ -1,15 +1,18 @@
 package com.GroupAssignment.marsrover;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import static com.GroupAssignment.marsrover.HomeScreen.userScore;
+
 public class ProfileScreen extends AppCompatActivity {
 
-    private TextView name, score, medal, lesson1, lesson2, lesson3, lesson4, lesson5, lesson6, lesson7, lesson8, lesson9;
-    private ImageView profilepic, medal1, medal2, medal3, medal4, medal5, medal6, medal7, medal8, medal9;
+    private TextView name, score, medal, lesson1, lesson2, lesson3, lesson4;
+    private ImageView profilepic, medal1, medal2, medal3, medal4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,27 +25,25 @@ public class ProfileScreen extends AppCompatActivity {
         lesson2 = (TextView) findViewById(R.id.lesson2);
         lesson3 = (TextView) findViewById(R.id.lesson3);
         lesson4 = (TextView) findViewById(R.id.lesson4);
-        lesson5 = (TextView) findViewById(R.id.lesson5);
-        lesson6 = (TextView) findViewById(R.id.lesson6);
-        lesson7 = (TextView) findViewById(R.id.lesson7);
-        lesson8 = (TextView) findViewById(R.id.lesson8);
-        lesson9 = (TextView) findViewById(R.id.lesson9);
         profilepic = (ImageView) findViewById(R.id.profilepic);
         medal1 = (ImageView) findViewById(R.id.medal1);
         medal2 = (ImageView) findViewById(R.id.medal2);
         medal3 = (ImageView) findViewById(R.id.medal3);
         medal4 = (ImageView) findViewById(R.id.medal4);
-        medal5 = (ImageView) findViewById(R.id.medal5);
-        medal6 = (ImageView) findViewById(R.id.medal6);
-        medal7 = (ImageView) findViewById(R.id.medal7);
-        medal8 = (ImageView) findViewById(R.id.medal8);
-        medal9 = (ImageView) findViewById(R.id.medal9);
-        // will find different ImageView afterwards
+
 
         name.setText("Student");
-
         //int totalScore = sum of the score of every game
         //score.setText("Total score:" + Integer.ValueOf(totalScore)
+
+        if (userScore>=3)
+            medal1.setVisibility(View.VISIBLE);
+        if (userScore>=6)
+            medal1.setVisibility(View.VISIBLE);
+        if (userScore>=9)
+            medal1.setVisibility(View.VISIBLE);
+        if (userScore>=12)
+            medal1.setVisibility(View.VISIBLE);
 
         //if finish one lesson and game score > 75marks --> imageView become visible
         //medal1.setVisibility(View.VISIBLE)
