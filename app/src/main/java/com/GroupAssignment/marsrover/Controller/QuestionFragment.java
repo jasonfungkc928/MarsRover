@@ -51,8 +51,8 @@ public class QuestionFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_question, container, false);
 
-        if(mQuestion != null){
+       // if(mQuestion != null){
             //set all the views in the question fragment
-        }
+        // }
     }
 }

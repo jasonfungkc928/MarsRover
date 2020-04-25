@@ -40,7 +40,7 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
             //launch question activity with intent
             Context context = v.getContext();
             Intent intent = new Intent(context, QuestionActivity.class);
-            intent.putExtra()
+            //intent.putExtra()
         }
     };
 
@@ -126,9 +126,11 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
         }
         TextView textView = convertView.findViewById(R.id.level);
 
+        String s = group.replaceAll("[^0-9]", "");
+        String q = child.replaceAll("[^0-9]", "");
         /**This code requires that the only integers in the parent names are 0,1,2,3 resepctively*/
-        int stage = Integer.parseInt(group.replaceAll("[^\\d.]", ""));
-        int question = Integer.parseInt(child.replaceAll("[^\\d.]", ""));
+        int stage = Integer.parseInt(s.replaceAll("[.]", ""));
+        int question = Integer.parseInt(q.replaceAll("[.]", ""));
         int requiredScore = (stage*3)+question;
 
 
@@ -154,8 +156,11 @@ public class LevelScreenAdapter extends BaseExpandableListAdapter {
         String group = (String) getGroup(groupPosition);
         String child = (String) getChild(groupPosition, childPosition);
 
-        int stage = Integer.parseInt(group.replaceAll("[^\\d.]", ""));
-        int question = Integer.parseInt(child.replaceAll("[^\\d.]", ""));
+        String s = group.replaceAll("[^0-9]", "");
+        String q = child.replaceAll("[^0-9]", "");
+        /**This code requires that the only integers in the parent names are 0,1,2,3 resepctively*/
+        int stage = Integer.parseInt(s.replaceAll("[.]", ""));
+        int question = Integer.parseInt(q.replaceAll("[.]", ""));
         int requiredScore = (stage*3)+question;
 
         if (requiredScore > userScore+1) {
