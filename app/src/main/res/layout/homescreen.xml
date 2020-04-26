@@ -21,7 +21,7 @@
         android:id="@+id/profile"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="100dp"
         android:onClick="startProfile"
         android:text="Profile"
         android:textColor="#851d41"
@@ -62,20 +62,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lesson" />
-
-    <Button
-        android:id="@+id/QandA"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/list_bg"
-        android:onClick="startQandA"
-        android:text="Q and A"
-        android:textColor="#851d41"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/game" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

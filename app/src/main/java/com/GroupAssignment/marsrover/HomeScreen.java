@@ -15,7 +15,7 @@ import com.GroupAssignment.marsrover.Controller.MainActivity;
 
 public class HomeScreen extends AppCompatActivity {
 
-    private Button lesson, game, profile, QandA;
+    private Button lesson, game, profile;
     private ImageView imageView1;
 
     static int userScore;
@@ -28,7 +28,6 @@ public class HomeScreen extends AppCompatActivity {
         lesson = (Button) findViewById(R.id.lesson);
         game = (Button) findViewById(R.id.game);
         profile = (Button) findViewById(R.id.profile);
-        QandA = (Button) findViewById(R.id.QandA);
         imageView1 = (ImageView) findViewById(R.id.imageView1);
 
         /**create or load userScore**/
@@ -50,11 +49,6 @@ public class HomeScreen extends AppCompatActivity {
 
     public void startProfile (View view) {
         Intent intent = new Intent(this, ProfileScreen.class);
-        startActivity(intent);
-    }
-    //navigate to QandA page
-    public void startQandA (View view) {
-        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
