@@ -18,12 +18,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.GroupAssignment.marsrover.HomeScreen;
+import com.GroupAssignment.marsrover.JavaActivity;
 import com.GroupAssignment.marsrover.LevelScreenAdapter;
 import com.GroupAssignment.marsrover.Model.Question;
 import com.GroupAssignment.marsrover.R;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
 
 
 /**
@@ -152,20 +152,26 @@ public class QuestionFragment extends Fragment {
         }
         resultPopup.setTitle(alertTitle);
         resultPopup.setMessage(alertMessage);
-        resultPopup.setNeutralButton("Back To Level Select", new DialogInterface.OnClickListener() {
+        resultPopup.setPositiveButton("To Level Select", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Context context = getActivity();
                 Intent intent = new Intent(context, MainActivity.class);
-                //intent.putExtra(QuestionFragment.ARG_QUESTION_NAME, qTitle);
+
+                context.startActivity(intent);
+            }
+        });
+        resultPopup.setNeutralButton("To Lessons", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Context context = getActivity();
+                Intent intent = new Intent(context, JavaActivity.class);
 
                 context.startActivity(intent);
             }
         });
 
-//        LayoutInflater inflater = this.getLayoutInflater();
-//        View v = inflater.inflate(R.layout.question_result_popup, null);
-//        resultPopup.setView(v);
+
         resultPopup.show();
 
     }
@@ -189,6 +195,5 @@ public class QuestionFragment extends Fragment {
         userScore = newScore;
         l.setUserScore(newScore);
         sharedPref.edit().putInt("user_score", newScore).commit();
-        //notify();
     }
 }
