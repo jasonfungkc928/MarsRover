@@ -8,4 +8,7 @@
     <color name="offWhite">#f0e7e7</color>
     <color name="darkOrange">#451804</color>
     <color name="marsOrange">#E77D11</color>
+    <color name="yellow_light">#f5f0e3</color>
+    <color name="dark_red">#851d41</color>
+    <color name="dark_yellow">#ffd5ab</color>
 </resources>

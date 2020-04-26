@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    android:background="@color/darkOrange">
+    android:background="@color/dark_red">
 
     <TextView
         android:layout_marginTop="5dp"
@@ -14,7 +14,7 @@
         android:id="@+id/list_parent"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="@color/offWhite"
+        android:textColor="#FFFFFF"
         android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"/>
 
 </LinearLayout>
