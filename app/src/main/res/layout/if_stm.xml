@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/yellow_light">
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
@@ -13,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="If Statement"
-        android:textColor="#000000"
+        android:textColor="@color/dark_red"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,9 +40,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginRight="8dp"
         android:text="Sample code"
-        android:textColor="#000000"
+        android:textColor="@color/dark_red"
         android:textSize="18sp"
-        android:textStyle='italic'
+        android:textStyle='bold'
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -121,7 +122,7 @@
         android:layout_marginTop="16dp"
         android:text="If-else statement"
         android:textSize="18sp"
-        android:textColor="#000000"
+        android:textColor="@color/dark_red"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
