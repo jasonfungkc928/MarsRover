@@ -6,131 +6,176 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/profilepic"
-        android:layout_width="108dp"
-        android:layout_height="106dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="76dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="120dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="90dp"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profilepic"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="120dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="22dp"
-        android:text="Score"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/profilepic"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
-
-    <TextView
-        android:id="@+id/medal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="199dp"
-        android:layout_marginBottom="72dp"
-        android:text="Medal"
-        app:layout_constraintBottom_toTopOf="@+id/lesson1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/medal1"
+        android:layout_width="72dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/textView26"
+        app:layout_constraintTop_toBottomOf="@+id/textView26"
+        app:srcCompat="@drawable/top3"
+        tools:visibility="invisible" />
 
     <ImageView
         android:id="@+id/medal2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
+        android:layout_width="72dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/lesson2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/medal1"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
-
-    <ImageView
-        android:id="@+id/medal1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginBottom="18dp"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/lesson1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:layout_constraintStart_toStartOf="@+id/textView26"
+        app:layout_constraintTop_toBottomOf="@+id/medal1"
+        app:srcCompat="@drawable/top2"
+        tools:visibility="invisible" />
 
     <ImageView
         android:id="@+id/medal3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="72dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/lesson3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
-
-    <TextView
-        android:id="@+id/lesson1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginBottom="64dp"
-        android:text="Stage0"
-        app:layout_constraintBottom_toTopOf="@+id/medal3"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/lesson2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="114dp"
-        android:layout_marginBottom="64dp"
-        android:text="Stage1"
-        app:layout_constraintBottom_toTopOf="@+id/medal4"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/lesson3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginBottom="182dp"
-        android:text="Stage2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/textView26"
+        app:layout_constraintTop_toBottomOf="@+id/medal2"
+        app:srcCompat="@drawable/top1"
+        tools:visibility="invisible" />
 
     <ImageView
         android:id="@+id/medal4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="126dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="72dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="16dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/lesson4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:layout_constraintStart_toStartOf="@+id/textView26"
+        app:layout_constraintTop_toBottomOf="@+id/medal3"
+        app:srcCompat="@drawable/tops"
+        tools:visibility="invisible" />
 
     <TextView
-        android:id="@+id/lesson4"
+        android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="114dp"
-        android:layout_marginBottom="182dp"
-        android:text="Stage3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Achivements"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#851d41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="64dp"
+        android:background="#f5f0e3"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="132dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView27"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mars" />
+
+    <TextView
+        android:id="@+id/textView28"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="User Name"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView7"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <TextView
+        android:id="@+id/notice1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Do not have any achivement"
+        android:textColor="#606060"
+        android:textSize="15sp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+    <TextView
+        android:id="@+id/notice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Complete the first game stage to get the first medal"
+        android:textColor="#606060"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notice1" />
+
+    <TextView
+        android:id="@+id/stage1Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Completed stage 1"
+        android:textColor="#851d41"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/medal2"
+        app:layout_constraintStart_toEndOf="@+id/medal2"
+        app:layout_constraintTop_toTopOf="@+id/medal2" />
+
+    <TextView
+        android:id="@+id/stage2Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Completed stage 2"
+        android:textColor="#851d41"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/medal3"
+        app:layout_constraintStart_toEndOf="@+id/medal3"
+        app:layout_constraintTop_toTopOf="@+id/medal3" />
+
+    <TextView
+        android:id="@+id/stage3Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Completed stage 3"
+        android:textColor="#851d41"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/medal4"
+        app:layout_constraintStart_toEndOf="@+id/medal4"
+        app:layout_constraintTop_toTopOf="@+id/medal4" />
+
+    <TextView
+        android:id="@+id/stage0Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Completed stage 0"
+        android:textColor="#851d41"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/medal1"
+        app:layout_constraintStart_toEndOf="@+id/medal1"
+        app:layout_constraintTop_toTopOf="@+id/medal1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

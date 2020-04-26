@@ -3,27 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
 
     <TextView
         android:id="@+id/lessonText"
         android:layout_width="384dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/list_bg"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:text="TextView"
         android:padding="10dp"
         android:paddingStart="30dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#D4473E"
-        android:textSize="24sp"
+        android:textColor="#db3056"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#F9F9F9"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
