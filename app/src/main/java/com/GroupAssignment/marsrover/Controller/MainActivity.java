@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.LauncherActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.GroupAssignment.marsrover.HomeScreen;
 import com.GroupAssignment.marsrover.LevelScreenAdapter;
 import com.GroupAssignment.marsrover.Model.Question;
 import com.GroupAssignment.marsrover.R;
@@ -100,6 +102,13 @@ public class MainActivity extends AppCompatActivity {
             tvScore.setText("Score: "+getUserScore());
         }
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Context context = this;
+        Intent intent = new Intent(context, HomeScreen.class);
+        context.startActivity(intent);
     }
 
 }

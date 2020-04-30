@@ -3,6 +3,7 @@ package com.GroupAssignment.marsrover.Controller;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -25,5 +26,12 @@ public class QuestionActivity extends AppCompatActivity {
                     .add(R.id.question_fragment, fragment)
                     .commit();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Context context = this;
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
     }
 }
